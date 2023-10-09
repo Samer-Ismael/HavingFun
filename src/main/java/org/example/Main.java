@@ -15,13 +15,13 @@ public class Main {
         //new BMI();
 
         int [] numbers = {1,3};
-        int [] result =  searchRange(numbers, 1);
+        int [] result =  searchRangeMySolution(numbers, 1);
         for (int number1 : result) {
             System.out.println(number1);
         }
 
     }
-    public static int[] searchRange(int[] nums, int target) {
+    public static int[] searchRangeMySolution(int[] nums, int target) {
 
         //Problem is marked as medium in leetCod (Find first and last position element in sorted array)
         // It was accepted but the Runtime is garbage
