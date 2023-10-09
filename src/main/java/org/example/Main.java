@@ -68,4 +68,57 @@ public class Main {
             return result;
         }
     }
+
+    public static int[] searchRangeChatGPT (int[] nums, int target) {
+
+        //This was that fastest solution letCode has ever seen.
+        // 0ms
+        // Beats 100.00%of users with Java
+
+
+        int[] result = new int[2];
+        result[0] = findFirstOccurrence(nums, target);
+        result[1] = findLastOccurrence(nums, target);
+        return result;
+    }
+
+    private static int findFirstOccurrence(int[] nums, int target) {
+        int left = 0;
+        int right = nums.length - 1;
+        int result = -1;
+
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            if (nums[mid] == target) {
+                result = mid;
+                right = mid - 1; // Continue searching on the left side
+            } else if (nums[mid] < target) {
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
+
+        return result;
+    }
+
+    private static int findLastOccurrence(int[] nums, int target) {
+        int left = 0;
+        int right = nums.length - 1;
+        int result = -1;
+
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            if (nums[mid] == target) {
+                result = mid;
+                left = mid + 1; // Continue searching on the right side
+            } else if (nums[mid] < target) {
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
+
+        return result;
+    }
 }
