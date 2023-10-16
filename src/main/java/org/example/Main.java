@@ -13,13 +13,12 @@ public class Main {
         //new StringHiding("Samer");
 
         //new BMI();
-
+/*
         int [] numbers = {1,3};
         int [] result =  searchRangeMySolution(numbers, 1);
         for (int number1 : result) {
             System.out.println(number1);
-        }
-
+        */
     }
     public static int[] searchRangeMySolution(int[] nums, int target) {
 
